@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: mada-voyage-web
+    ports:
+      - "${PORT}:80"
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - APP_ENV=${APP_ENV}
+      - APP_DEBUG=${APP_DEBUG}
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - mada-network
+
+  db:
+    image: mysql:8.0
+    container_name: mada-voyage-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./donnees.sql:/docker-entrypoint-initdb.d/donnees.sql
+    networks:
+      - mada-network
+
+volumes:
+  db-data:
+
+networks:
+  mada-network:
+    driver: bridge

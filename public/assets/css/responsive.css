@@ -1,0 +1,341 @@
+/* ========================================
+   RESPONSIVE DESIGN & MOBILE OPTIMIZATION
+   ======================================== */
+
+/* Reset et bases responsives */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   MOBILE FIRST - Écrans < 768px
+   ======================================== */
+
+@media (max-width: 767.98px) {
+    /* Navbar Mobile */
+    .navbar {
+        padding: 0.5rem 0 !important;
+    }
+
+    .navbar-brand {
+        flex-grow: 1;
+    }
+
+    .brand-text {
+        font-size: 1rem !important;
+    }
+
+    /* Navbar collapse */
+    .navbar-collapse {
+        padding-top: 1rem;
+    }
+
+    .navbar-nav {
+        gap: 0.5rem !important;
+    }
+
+    .nav-link, .btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem !important;
+    }
+
+    /* Typography Mobile */
+    h1, .display-4, .display-5, .display-6 {
+        font-size: 1.75rem !important;
+    }
+
+    h2, .h2 {
+        font-size: 1.5rem !important;
+    }
+
+    h3, .h3 {
+        font-size: 1.25rem !important;
+    }
+
+    h4, .h4, h5, .h5 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Hero Section Mobile */
+    .hero-section {
+        min-height: 60vh;
+        padding: 3rem 1rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    /* Buttons Mobile */
+    .btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Cards Mobile */
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 1rem !important;
+    }
+
+    /* Forms Mobile */
+    .form-control, .form-select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 0.75rem 0.5rem;
+    }
+
+    label {
+        font-size: 0.95rem;
+    }
+
+    /* Tables Mobile */
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .table th, .table td {
+        padding: 0.5rem !important;
+    }
+
+    /* Container Padding */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Sections Mobile */
+    section {
+        padding: 2rem 1rem !important;
+    }
+
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Gap Mobile */
+    .gap-4 {
+        gap: 1rem !important;
+    }
+
+    .gap-3 {
+        gap: 0.75rem !important;
+    }
+
+    /* Flexbox Mobile */
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .justify-content-between {
+        justify-content: flex-start !important;
+    }
+
+    /* Badge/Alerts Mobile */
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* Fixed Button Bar Mobile */
+    .fixed-mobile-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #ddd;
+        padding: 0.5rem;
+        z-index: 1040;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .fixed-mobile-bar .btn {
+        flex: 1;
+        font-size: 0.85rem;
+        padding: 0.5rem 0.25rem;
+    }
+
+    /* Main Content - Add padding to prevent overlap */
+    main {
+        padding-bottom: 120px;
+    }
+
+    /* Image Responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Alert/Notice Mobile */
+    .alert {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    /* Breadcrumb Mobile */
+    .breadcrumb {
+        font-size: 0.85rem;
+    }
+
+    /* Pagination Mobile */
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .page-link {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    /* List Groups Mobile */
+    .list-group-item {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    /* Modals Mobile */
+    .modal-dialog {
+        margin: 1rem;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    /* Dropdown Mobile */
+    .dropdown-menu {
+        font-size: 0.95rem;
+    }
+
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ========================================
+   TABLET - Écrans 768px à 1024px
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 750px;
+    }
+
+    h1, .display-4 {
+        font-size: 2.5rem !important;
+    }
+
+    .hero-section {
+        min-height: 70vh;
+    }
+
+    .card-img-top {
+        height: 250px;
+    }
+}
+
+/* ========================================
+   DESKTOP - Écrans > 1024px
+   ======================================== */
+
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .card-img-top {
+        height: 300px;
+    }
+
+    main {
+        padding-bottom: 0;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #0277bd;
+    outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    /* Optional dark mode styles */
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .navbar,
+    .footer,
+    .btn-mobile-bar,
+    .fixed-mobile-bar {
+        display: none !important;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+    }
+}

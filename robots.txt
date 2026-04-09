@@ -1,0 +1,26 @@
+# Mada Voyage - robots.txt
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /config/
+Disallow: /core/
+Disallow: /logs/
+Disallow: /public/assets/uploads/
+Disallow: /.env
+Disallow: /.env.example
+Disallow: /index.php?
+Disallow: /*?
+Allow: /$
+Allow: /index.php$
+Allow: /public/assets/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://madavoyage.com/sitemap.xml

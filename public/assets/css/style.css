@@ -1,0 +1,461 @@
+/* Définition des variables CSS pour les couleurs */
+:root {
+    --bs-primary: #0A7B79;
+    --bs-secondary: #FFD700;
+    --bs-info: #E63946;
+    --bs-dark: #1D3557;
+    --bs-light: #F1FAEE;
+    --bs-gray-600: #6c757d;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--bs-dark);
+    background-color: var(--bs-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header & Footer */
+header, footer {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 100;
+}
+
+footer {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: var(--bs-dark);
+    color: #fff;
+}
+footer a {
+    font-weight: 500;
+    color: #FFD700;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #E63946;
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: #fff;
+}
+.navbar-brand {
+    transition: transform 0.3s;
+}
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+.nav-link {
+    font-weight: 600;
+    color: var(--bs-dark) !important;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+.nav-link:hover {
+    color: var(--bs-primary) !important;
+    background-color: rgba(10, 123, 121, 0.08);
+}
+.header-btn-login {
+    background: linear-gradient(90deg, #0A7B79 60%, #FFD700 100%);
+    color: #fff !important;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.5rem 1.3rem;
+    border-radius: 30px;
+    margin-left: 0.5rem;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(10,123,121,0.11);
+}
+.header-btn-login:hover, .header-btn-login:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+.header-btn-panier {
+    background: linear-gradient(90deg, #FFD700 60%, #0A7B79 100%);
+    color: #1D3557 !important;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.5rem 1.3rem;
+    border-radius: 30px;
+    margin-left: 0.5rem;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(230,57,70,0.09);
+}
+.header-btn-panier:hover, .header-btn-panier:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('../images/paradis.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 56px;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+}
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    opacity: 0.95;
+}
+
+/* Section Titles */
+h2.display-5, h2.display-6 {
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+h2.display-5::after, h2.display-6::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--bs-primary);
+    border-radius: 2px;
+}
+
+/* Cards */
+.card {
+    border-radius: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #fff;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.18) !important;
+}
+.card-img-top {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    height: 200px;
+    object-fit: cover;
+}
+.card-body {
+    padding: 1.5rem;
+}
+.card-title {
+    color: var(--bs-dark);
+    font-weight: 700;
+}
+.card-text {
+    color: var(--bs-gray-600);
+}
+.card .fa-3x {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transition: all 0.3s;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-primary:hover {
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.btn-info {
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+    transition: all 0.3s;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff !important;
+}
+.btn-info:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.btn-login {
+    background: linear-gradient(90deg, #0A7B79 60%, #FFD700 100%);
+    color: #fff !important;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(10,123,121,0.18);
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-login:hover, .btn-login:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-panier {
+    background: linear-gradient(90deg, #FFD700 60%, #0A7B79 100%);
+    color: #1D3557 !important;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(230,57,70,0.12);
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-panier:hover, .btn-panier:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-payer {
+    background: linear-gradient(90deg, #0A7B79 60%, #FFD700 100%);
+    color: #fff !important;
+    font-weight: 700;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 16px rgba(10,123,121,0.13);
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-payer:hover, .btn-payer:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Formulaires */
+.form-control {
+    border-radius: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-size: 1.08rem;
+}
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(10, 123, 121, 0.25);
+}
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+.form-reservation, .form-paiement {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 24px rgba(10,123,121,0.10);
+    padding: 2.5rem 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    border-top: 6px solid var(--bs-primary);
+    box-shadow: 0 8px 32px rgba(10,123,121,0.13);
+    background: linear-gradient(135deg, #fff 80%, #e6f7f7 100%);
+}
+.form-paiement {
+    border-top-color: #E63946;
+}
+.form-reservation {
+    border-top-color: #0A7B79;
+}
+.form-paiement .btn-payer, .form-reservation .btn-info {
+    font-size: 1.18rem;
+    padding: 1rem 2.5rem;
+    letter-spacing: 0.5px;
+}
+.form-paiement .btn-payer i, .form-reservation .btn-info i {
+    font-size: 1.2em;
+}
+.form-paiement .payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1.5rem 0 1rem 0;
+}
+.form-paiement .payment-method {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #f8fafc;
+    border-radius: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+    transition: border 0.2s, background 0.2s;
+    font-weight: 500;
+}
+.form-paiement .payment-method.selected,
+.form-paiement .payment-method:hover {
+    border: 2px solid var(--bs-primary);
+    background: #e6f7f7;
+}
+.form-paiement .payment-method input[type="radio"] {
+    accent-color: var(--bs-primary);
+    width: 1.2em;
+    height: 1.2em;
+}
+.form-paiement .payment-icon {
+    font-size: 2rem;
+    color: var(--bs-primary);
+    background: #fff;
+    border-radius: 50%;
+    padding: 0.25em 0.5em;
+    border: 1px solid #eee;
+    margin-right: 0.5em;
+}
+#resume-panier {
+    background: #f8fafc;
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    color: var(--bs-dark);
+}
+
+/* Circuits détails */
+.circuit-details {
+    font-size: 0.98rem;
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+}
+.circuit-details .fa {
+    color: var(--bs-primary);
+    margin-right: 0.5rem;
+}
+
+/* Cartes pratiques */
+#pratique .card:hover {
+    border-color: var(--bs-primary);
+    box-shadow: 0 1rem 2rem rgba(10, 123, 121, 0.15);
+    transform: translateY(-6px) scale(1.03);
+}
+
+/* Modale */
+.modal-content {
+    border-radius: 1rem;
+    border: none;
+}
+.modal-header {
+    background-color: var(--bs-primary);
+    color: white;
+    border-bottom: none;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+.modal-title {
+    font-weight: 700;
+}
+.modal-body .fa-4x {
+    color: var(--bs-primary);
+    font-size: 4.5rem;
+}
+.modal-footer {
+    border-top: none;
+}
+
+/* Utilitaires */
+.text-primary-custom { color: var(--bs-primary) !important; }
+.text-secondary-custom { color: var(--bs-secondary) !important; }
+.text-accent-custom { color: var(--bs-info) !important; }
+.bg-primary-custom { background-color: var(--bs-primary) !important; }
+.bg-light-custom { background-color: var(--bs-light) !important; }
+.bg-dark-custom { background-color: var(--bs-dark) !important; }
+.hover-underline:hover { text-decoration: underline !important; }
+
+/* Responsive */
+@media (min-width: 768px) {
+    section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+@media (max-width: 600px) {
+    .form-reservation, .form-paiement {
+        padding: 1.2rem 0.5rem;
+    }
+    .form-paiement .btn-payer, .form-reservation .btn-info {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+    .card-img-top {
+        height: 140px;
+    }
+}
+
+/* Divers */
+::-webkit-input-placeholder { color: #b0b0b0; }
+::-moz-placeholder { color: #b0b0b0; }
+:-ms-input-placeholder { color: #b0b0b0; }
+::placeholder { color: #b0b0b0; }
+
+.btn-payer:hover, .btn-payer:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+
+
+/* Bouton paiement principal */
+.btn-payer {
+    background: linear-gradient(90deg, #0A7B79 60%, #FFD700 100%);
+    color: #fff !important;
+    font-weight: 700;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 16px rgba(10,123,121,0.13);
+    transition:  0.3s, transform 0.2s;
+}
+.btn-payer:hover, .btn-payer:focus {
+    background: linear-gradient(90deg, #E63946 60%, #FFD700 100%);
+    color: #fff !important;
+    transform: translateY(-2px) scale(1.03);
+}
+
+
+
