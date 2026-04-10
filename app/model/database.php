@@ -77,5 +77,4 @@ function closePDO() {
 
 // Initialiser la connexion
 $pdo = getPDO();
-?>
 

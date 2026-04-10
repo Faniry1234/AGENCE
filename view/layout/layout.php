@@ -38,10 +38,22 @@
     <main>
         <?php 
         // Affiche le contenu de la vue demandée
-        if (!empty($view) && file_exists(__DIR__ . '/../' . $view)) {
-            include __DIR__ . '/../' . $view;
+        if (!empty($view)) {
+            // Build the path properly
+            $basePath = dirname(__DIR__); // Go up to view folder
+            $viewPath = $basePath . DIRECTORY_SEPARATOR . $view;
+            
+            // Normalize slashes in the view path for checking
+            $normalizedView = str_replace('/', DIRECTORY_SEPARATOR, $view);
+            $viewPath = $basePath . DIRECTORY_SEPARATOR . $normalizedView;
+            
+            if (file_exists($viewPath)) {
+                include $viewPath;
+            } else {
+                echo '<div class="container py-5"><div class="alert alert-danger">Vue introuvable: ' . htmlspecialchars($viewPath) . '</div></div>';
+            }
         } else {
-            echo '<div class="container py-5"><div class="alert alert-danger">Vue introuvable.</div></div>';
+            echo '<div class="container py-5"><div class="alert alert-danger">Aucune vue spécifiée</div></div>';
         }
         ?>
     </main>

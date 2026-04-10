@@ -275,16 +275,143 @@ html, body {
         max-width: 1140px;
     }
 
+    /* Navbar Desktop - Restore horizontal layout */
+    .navbar {
+        padding: 1rem 0 !important;
+    }
+
+    .navbar-brand {
+        flex-grow: 0;
+    }
+
+    .brand-text {
+        font-size: 1.5rem !important;
+    }
+
+    .navbar-collapse {
+        padding-top: 0 !important;
+    }
+
+    .navbar-nav {
+        gap: 1rem !important;
+    }
+
+    .nav-link, .btn {
+        font-size: 1rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    /* Typography Desktop */
+    h1, .display-4, .display-5, .display-6 {
+        font-size: 3.5rem !important;
+    }
+
+    h2, .h2 {
+        font-size: 2.5rem !important;
+    }
+
+    h3, .h3 {
+        font-size: 2rem !important;
+    }
+
+    /* Flexbox Desktop - Restore horizontal */
+    .d-flex {
+        flex-direction: row !important;
+    }
+
+    .justify-content-between {
+        justify-content: space-between !important;
+    }
+
+    /* Forms Desktop */
+    .form-control, .form-select {
+        font-size: 1rem !important;
+        padding: 0.75rem 1rem !important;
+    }
+
+    label {
+        font-size: 1rem !important;
+    }
+
+    /* Tables Desktop */
+    .table {
+        font-size: 1rem !important;
+    }
+
+    .table th, .table td {
+        padding: 1rem !important;
+    }
+
+    /* Container Padding Desktop */
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    /* Sections Desktop */
+    section {
+        padding: 3rem 1.5rem !important;
+    }
+
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* Gap Desktop */
+    .gap-4 {
+        gap: 1.5rem !important;
+    }
+
+    .gap-3 {
+        gap: 1rem !important;
+    }
+
+    /* Cards Desktop */
+    .card {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .card-body {
+        padding: 1.5rem !important;
+    }
+
+    /* Hero Section Desktop */
     .hero-section {
         min-height: 80vh;
     }
 
+    .hero-content {
+        padding: 2rem !important;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem !important;
+    }
+
+    /* Buttons Desktop */
+    .btn {
+        font-size: 1rem !important;
+        padding: 0.75rem 1.5rem !important;
+    }
+
+    .btn-lg {
+        font-size: 1.1rem !important;
+        padding: 1rem 2rem !important;
+    }
+
+    /* Image Desktop */
     .card-img-top {
         height: 300px;
     }
 
     main {
         padding-bottom: 0;
+    }
+
+    /* Main Content Padding */
+    main {
+        padding-top: 2rem;
     }
 }
 
