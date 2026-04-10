@@ -46,7 +46,8 @@ define('DB_PORT', getenv('DB_PORT') ?: 3306);
 define('DB_NAME', getenv('DB_NAME') ?: 'madavoyage');
 define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') ?: '');
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8mb4');
+define('DB_SSL_MODE', getenv('DB_SSL_MODE') ?: 'DISABLED');
 
 // Chemins des fichiers
 define('ROOT_PATH', dirname(__DIR__) . '/');

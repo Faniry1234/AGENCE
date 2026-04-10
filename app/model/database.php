@@ -24,19 +24,31 @@ function getPDO() {
             $user = DB_USER;
             $password = DB_PASS;
             $database = DB_NAME;
+            $charset = DB_CHARSET;
+            $sslMode = DB_SSL_MODE;
             
             // Créer l'instance PDO
-            $dsn = "mysql:host={$host};port={$port};dbname={$database};charset=" . DB_CHARSET;
-            $pdo = new PDO($dsn, $user, $password);
+            $dsn = "mysql:host={$host};port={$port};dbname={$database};charset={$charset}";
             
-            // Configurer les options PDO
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            // Options PDO
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ];
+            
+            // Configuration SSL si nécessaire
+            if ($sslMode === 'REQUIRED') {
+                // Force SSL connection
+                $options[PDO::MYSQL_ATTR_SSL_CA] = null;
+                $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
+            }
+            
+            $pdo = new PDO($dsn, $user, $password, $options);
             
             // Log en développement
             if (APP_DEBUG) {
-                debugLog('Database connected successfully');
+                debugLog('Database connected successfully with SSL mode: ' . $sslMode);
             }
             
         } catch (PDOException $e) {
